@@ -1,5 +1,16 @@
+import { useState } from "react"
 
 function Nav() {
+    const [showMenu, setShowMenu] = useState(false)
+
+    function handleClick() {
+        setShowMenu(prevMenu => !prevMenu)
+    }
+
+    const menuStyles = {
+        marginRight: showMenu ? "6rem" : "1rem"
+    }
+
     return (
         <nav>
             <div className="nav-hero-container">
@@ -7,13 +18,19 @@ function Nav() {
                 <p className="nav-hero-descrip">The Cleaning Experts</p>
             </div>
             <div className="menu-container">
-                <p className="menu-btn">X</p>
+                {showMenu ?
+                <span className="material-symbols-outlined" onClick={handleClick} style={menuStyles}>close</span> :
+                <span className="material-symbols-outlined" onClick={handleClick} style={menuStyles}>open</span>
+                }
+                {
+                showMenu &&
                 <ul className="nav-items">
                     <a className="nav-item">Home</a>
                     <a className="nav-item">About</a>
                     <a className="nav-item">Services</a>
                     <a className="nav-item">Reviews</a>
                 </ul>
+                }
             </div>
         </nav>
     )

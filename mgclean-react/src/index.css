@@ -28,11 +28,11 @@ nav {
 }
 
 .nav-hero-title {
-  margin-bottom: 0;
+  margin: 10px 0 0 0;
 }
 
 .nav-hero-descrip {
-  margin-top: 0;
+  margin: 0 0 10px 0;
 }
 
 .menu-container {
@@ -41,15 +41,27 @@ nav {
 }
 
 .menu-btn {
-  margin-right: 10px;
+  margin: auto 10px;
+  font-size: 2rem;
 }
 
 .nav-items {
+  position: absolute;
   background: red;
   display: flex;
+  right: 0;
   flex-direction: column;
   margin: 0 0 0 auto;
   padding: 1.5rem 1rem;
+}
+
+.nav-items > .nav-item:hover {
+  text-decoration: underline;
+}
+
+.services-card {
+  width: 3rem;
+  font-size: 20px;
 }
 
 .hide {
